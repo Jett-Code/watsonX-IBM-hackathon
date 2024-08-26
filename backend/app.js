@@ -4,10 +4,11 @@ const session = require('express-session');
 const passport = require('./config/passport');
 const cors = require('cors');
 const routes = require('./routes');
+const $ = require('nano-spawn');
 
 const app = express();
 
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

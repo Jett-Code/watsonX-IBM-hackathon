@@ -14,6 +14,7 @@
         "express-session": "^1.17.2",
         "googleapis": "^109.0.1",
         "ibm-watson": "^9.1.0",
+        "nano-spawn": "^0.0.1",
         "passport": "^0.6.0",
         "passport-google-oauth20": "^2.0.0"
     }
