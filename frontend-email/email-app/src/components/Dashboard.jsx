@@ -86,7 +86,7 @@ const Dashboard = () => {
             <CardDescription>Here are your most important email headings</CardDescription>
           </CardHeader>
           <CardContent>
-  <ul className="list-disc pl-5">
+    <ul className="list-disc pl-5">
     {importantMails.map((mail, index) => {
       const cleanedMail = mail.replace(/^\d+\.\s*/, ''); // Remove leading numbers
       return cleanedMail ? (

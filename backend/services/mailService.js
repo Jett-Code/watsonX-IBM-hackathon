@@ -968,7 +968,6 @@ Give me important emails with ranks and make sure to highlight important deadlin
 `;
 
 
-
   try {
     const watsonXResponse = await axios.post(
       "https://us-south.ml.cloud.ibm.com/ml/v1/text/generation?version=2023-05-29",
