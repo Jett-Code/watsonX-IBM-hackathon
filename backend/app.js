@@ -1,0 +1,26 @@
+require('dotenv').config();
+const express = require('express');
+const session = require('express-session');
+const passport = require('./config/passport');
+const cors = require('cors');
+const routes = require('./routes');
+
+const app = express();
+
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/api', routes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
