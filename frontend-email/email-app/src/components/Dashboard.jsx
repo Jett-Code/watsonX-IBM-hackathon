@@ -86,20 +86,24 @@ const Dashboard = () => {
             <CardDescription>Here are your most important email headings</CardDescription>
           </CardHeader>
           <CardContent>
-            <ul className="list-disc pl-5">
-              {importantMails.map((mail, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="mb-2"
-                >
-                  {mail}
-                </motion.li>
-              ))}
-            </ul>
-          </CardContent>
+  <ul className="list-disc pl-5">
+    {importantMails.map((mail, index) => {
+      const cleanedMail = mail.replace(/^\d+\.\s*/, ''); // Remove leading numbers
+      return cleanedMail ? (
+        <motion.li
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          className="mb-2"
+        >
+          {cleanedMail}
+        </motion.li>
+      ) : null;
+    })}
+  </ul>
+</CardContent>
+
         </Card>
       )}
     </div>
