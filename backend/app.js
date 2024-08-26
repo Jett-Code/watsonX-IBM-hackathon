@@ -4,7 +4,6 @@ const session = require('express-session');
 const passport = require('./config/passport');
 const cors = require('cors');
 const routes = require('./routes');
-const $ = require('nano-spawn');
 
 const app = express();
 
